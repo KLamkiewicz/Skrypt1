@@ -1,0 +1,38 @@
+#!/bin/bash
+#Autor Krzysztof Lamkiewicz
+
+mojdir=$(pwd)
+echo ' -----------------------------------------'
+echo "|  	Witaj w kreatorze skryptow        |"
+echo ' -----------------------------------------'
+echo ' -----------------------------------------'
+echo "|Podaj nazwe skryptu jaki chcesz stworzyc:|"
+echo ' -----------------------------------------'
+read nazwa
+
+mkdir $mojdir/$nazwa
+cd $mojdir/$nazwa
+echo ' ----------------------------------------'
+echo "| Podaj swoje imie :                      |"
+echo ' ----------------------------------------'
+
+read imie
+
+echo ' -------------------------------------------------------------'
+echo "|Podaj jakie uprawnienia chcesz nadac swojemu skryptowi np. 
+777|"
+echo ' -------------------------------------------------------------'
+read mod
+
+echo  "#!/bin/bash 
+#Autor $imie
+#Utworzono $(date)
+
+touch $nazwa.txt " > $nazwa
+
+touch $nazwa.txt
+
+chmod $mod $nazwa
+
+nano $nazwa
+
